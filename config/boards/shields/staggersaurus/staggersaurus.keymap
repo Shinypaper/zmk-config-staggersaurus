@@ -25,6 +25,7 @@
   release-after-ms = <500>;
 };
 
+/ {
   combos {
       compatible = "zmk,combos";
       combo_esc {
