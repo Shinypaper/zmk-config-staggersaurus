@@ -10,13 +10,11 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define DEFAULT 0
-#define ALT 1
-#define GAME 2
-#define NAV 3
-#define SYMB 4
-#define NUMB 5
-#define MEDIA 6
-#define MOUSE 7
+#define GAME 1
+#define NAV 2
+#define SYMB 3
+#define NUMB 4 
+#define MEDIA 5
 
 &sk {
   release-after-ms = <500>;
@@ -26,18 +24,6 @@
 &sl {
   release-after-ms = <500>;
 };
-
-// &mmv {
-//     time-to-max-speed-ms = <1000>;
-//     acceleration-exponent=<1>;
-// };
-
-// &mwh {
-//     time-to-max-speed-ms = <1000>;
-//     acceleration-exponent=<1>;
-// };
-
-/ { 
 
   combos {
       compatible = "zmk,combos";
@@ -69,34 +55,6 @@
       tapping-term-ms = <150>;
       bindings = <&mo>, <&sk>;
     };
-    // mouse_l: mouse_left {
-    //   compatible = "zmk,behavior-mod-morph";
-    //   label = "MOUSE_LEFT";
-    //   #binding-cells = <0>;
-    //   bindings = <&mmv MOVE_HOR(-5000)>, <&mmv MOVE_HOR(-2000)>;
-    //   mods = <(MOD_LSFT|MOD_RSFT)>;
-    // };
-    // mouse_r: mouse_right {
-    //   compatible = "zmk,behavior-mod-morph";
-    //   label = "MOUSE_RIGHT";
-    //   #binding-cells = <0>;
-    //   bindings = <&mmv MOVE_HOR(5000)>, <&mmv MOVE_HOR(2000)>;
-    //   mods = <(MOD_LSFT|MOD_RSFT)>;
-    // };
-    // mouse_u: mouse_up {
-    //   compatible = "zmk,behavior-mod-morph";
-    //   label = "MOUSE_UP";
-    //   #binding-cells = <0>;
-    //   bindings = <&mmv MOVE_VERT(-5000)>, <&mmv MOVE_VERT(-2000)>;
-    //   mods = <(MOD_LSFT|MOD_RSFT)>;
-    // };
-    // mouse_d: mouse_down {
-    //   compatible = "zmk,behavior-mod-morph";
-    //   label = "MOUSE_DOWN";
-    //   #binding-cells = <0>;
-    //   bindings = <&mmv MOVE_VERT(5000)>, <&mmv MOVE_VERT(2000)>;
-    //   mods = <(MOD_LSFT|MOD_RSFT)>;
-    // };
   };
 
   keymap {
@@ -106,19 +64,7 @@
         &kp Q        &kp W        &kp E        &kp R        &kp T           &kp Y  &kp U        &kp I        &kp O        &kp QUOT 
         &kp A        &kp S        &kp D        &kp F        &kp G           &kp H  &kp J        &kp K        &kp L        &kp P   
         &kp Z        &kp X        &kp C        &kp V        &kp B           &kp N  &kp M        &kp CMMA     &kp DOT      &kp FSLH
-                          &tog ALT  &ml NAV LGUI  &ml NUMB LSFT             &mo SYMB  &kp SPACE  &tog GAME
-      >;
-      sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
-    };
-
-    // engram
-    alt_layer {
-      bindings = <
-        &kp B  &kp Y  &kp O  &kp U  &kp Z              &kp QUOT  &kp L  &kp D  &kp W  &kp V 
-        &kp C  &kp I  &kp E  &kp A  &kp CMMA           &kp DOT  &kp H  &kp T  &kp S  &kp N
-        &kp G  &kp X  &kp J  &kp K  &kp FSLH           &kp Q  &kp R  &kp M  &kp F  &kp P
-          &tog ALT  &ml NAV LGUI  &ml NUMB LSFT        &mo SYMB  &kp SPACE  &tog GAME
-
+                          &tog ALT  &ml NAV LSFT  &ml NUMB LGUI             &mo SYMB  &kp SPACE  &tog GAME
       >;
       sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
@@ -172,22 +118,5 @@
       sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 
-    // mouse_layer {
-    //   bindings = <
-    //     &tog  MOUSE  &kp RALT  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LC(UP)        &kp PG_UP  &mwh SCROLL_VERT(-40)  &mouse_u  &mkp MCLK  &mkp MB5 
-    //     &kp LCTL  &kp LALT  &kp LGUI  &kp LSFT  &kp SPC                       &kp PG_DN  &mouse_l  &mouse_d  &mouse_r  &tog MOUSE
-    //     &kp ESC  &kp LC(DOWN)  &kp LG(C)  &kp LG(V)  &kp BKSP                 &kp LC(UP)  &mwh SCROLL_VERT(40)  &mwh SCROLL_HOR(40)  &mwh SCROLL_HOR(-40)  &mkp MB4 
-    //                                 &trans  &trans                            &mkp RCLK  &mkp LCLK
-    //   >;
-    // };
-    mouse_layer {
-      bindings = <
-        &tog  MOUSE  &kp RALT  &kp LC(LEFT)  &kp LC(RIGHT)  &kp LC(UP)        &kp PG_UP  &kp LC(LS(LG(LA(SPACE))))  &kp KP_N8  &mkp MCLK  &mkp MB5 
-        &kp LCTL  &kp LALT  &kp LGUI  &kp LSFT  &kp SPC                       &kp PG_DN  &kp KP_N4 &kp KP_N2  &kp KP_N6  &tog MOUSE
-        &kp ESC  &kp LC(DOWN)  &kp LG(C)  &kp LG(V)  &kp BKSP                 &kp LC(UP)  &trans  &trans  &trans  &mkp MB4 
-                                  &trans  &trans  &trans                            &mkp RCLK  &mkp LCLK  &trans
-      >;
-      sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
-    };
   };
 };
