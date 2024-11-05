@@ -74,8 +74,8 @@
       bindings = <
         &kp ESC  &kp Q  &kp W  &kp E  &kp R             &kp T  &kp N1  &kp UP  &kp N2  &kp BKSP 
         &kp TAB  &kp A  &kp S  &kp D  &kp F             &kp G  &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER
-        &kp LSFT  &kp Z  &kp X  &kp C  &kp V            &kp B  &kp N3  &kp N4  &kp N5  &kp N6
-                    &trans  &kp LCTL  &kp SPACE           &tog GAME  &kp SPC &trans
+        &kp LCTL  &kp Z  &kp X  &kp C  &kp V            &kp B  &kp N3  &kp N4  &kp N5  &kp N6
+                    &trans  &kp LSFT  &kp SPACE           &tog GAME  &kp SPC &trans
         >;
     };
 
