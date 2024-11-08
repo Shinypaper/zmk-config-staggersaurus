@@ -81,9 +81,9 @@
 
     nav_layer {
       bindings = <
-        &kp CAPS  &sk RALT  &key_repeat   &caps_word  &sys_reset            &kp PG_UP     &kp LG(LBKT)    &kp UP          &kp LG(RBKT)    &trans 
+        &kp ESC  &sk RALT  &key_repeat   &caps_word  &sys_reset            &kp PG_UP     &kp LG(LBKT)    &kp UP          &kp LG(RBKT)    &trans 
         &sk LCTL  &sk LALT  &sk LGUI      &sk LSFT    &sk LC(LS(LG(LALT)))  &kp PG_DN     &kp LEFT        &kp DOWN        &kp RIGHT       &kp ENTER
-        &kp ESC   &kp TAB   &kp ENTER     &kp SPC     &kp BKSP              &sk GLOBE     &kp LG(LEFT)    &kp LC(MINUS)   &kp LG(RIGHT)   &kp DEL 
+        &kp CAPS   &kp TAB   &kp ENTER     &kp SPC     &kp BKSP              &sk GLOBE     &kp LG(LEFT)    &kp LC(MINUS)   &kp LG(RIGHT)   &kp DEL 
                                   &trans  &trans  &trans                    &mo MEDIA  &kp BKSP  &trans
       >;
       sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp DOWN UP>;
@@ -101,9 +101,9 @@
 
     number_layer {
       bindings = <
-        &kp CAPS  &kp RALT  &key_repeat   &caps_word  &kp STAR       &kp MINUS  &kp N7  &kp N8  &kp N9  &kp CMMA
+        &kp ESC  &kp RALT  &key_repeat   &caps_word  &kp STAR       &kp MINUS  &kp N7  &kp N8  &kp N9  &kp CMMA
         &kp LCTL  &kp LALT  &kp LGUI      &kp LSFT    &kp PLUS       &kp COLON  &kp N4  &kp N5  &kp N6  &kp ENTER 
-        &kp ESC   &kp TAB   &kp ENTER     &kp SPC     &kp BKSP       &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp DOT   
+        &kp CAPS   &kp TAB   &kp ENTER     &kp SPC     &kp BKSP       &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp DOT   
                                   &trans  &mo MEDIA  &trans          &kp N0  &kp BKSP  &trans
       >;
       sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp PG_DN PG_UP>;
